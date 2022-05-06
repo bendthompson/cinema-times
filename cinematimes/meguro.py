@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import re
 
 def get_soup():
     '''
@@ -22,6 +23,7 @@ def movie_extract(soup):
     '''
     extracts movie text from relevant html soup
     '''
+    pattern = r"タイトル☆-->.*<!--☆ここまで"
     engtitle = soup.find('span', class_='text_small').text
     jptitle = re.findall(pattern, str(soup))[0].replace('\u3000', ' ')
     movie_dict = {'engtitle':engtitle, 'jptitle':jptitle}
@@ -39,3 +41,8 @@ def meguro_info(soup):
     for dateormovie in dateormovie]
 
     return meguro_info
+
+if __name__ == '__main__':
+
+    soup = get_soup()
+    print(meguro_info(soup))
