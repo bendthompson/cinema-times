@@ -23,7 +23,7 @@ def movie_extract(soup):
     '''
     extracts movie text from relevant html soup
     '''
-    pattern = r"タイトル☆-->.*<!--☆ここまで"
+    pattern = r"タイトル☆-->(.*)<!--☆ここまで"
     engtitle = soup.find('span', class_='text_small').text
     jptitle = re.findall(pattern, str(soup))[0].replace('\u3000', ' ')
     movie_dict = {'engtitle':engtitle, 'jptitle':jptitle}
