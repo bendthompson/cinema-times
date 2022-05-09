@@ -5,9 +5,12 @@ def moviesearch(query):
     takes a query and returns {id,resulttype,image,title,description} for the first result from imdb search
     '''
     url = 'https://imdb-api.com/en/API/SearchMovie/k_iw50ohm9/'
-    response = requests.get(url+query).json()
-    firstresult = response['results'][0]
-    return firstresult
+    response = requests.get(url+query)
+    if response.status_code == 200:
+        firstresult = response.json()['results'][0]
+        return firstresult
+    else:
+        return 'none'
 
 def moviedetails(movieid):
     '''
