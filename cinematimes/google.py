@@ -1,6 +1,6 @@
 import requests
 
-def google_search(query):
+def search(query):
     '''
     takes cinema query and returns googles showtimes, a list of dictionaries for each day
     '''
@@ -35,5 +35,5 @@ def movie_list(showtimes):
     '''
     goes through showtimes and returns a list of each unique movie
     '''
-    movie_set = {movie['name'] for movie in day['movies'] for day in showtimes}
+    movie_set = {movie['name'] for day in showtimes for movie in day['movies']}
     return list(movie_set)
