@@ -26,8 +26,8 @@ def movie_extract(soup):
     engpattern = r'[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f]' #unicode for chinese/jp chars
     jppattern = r"タイトル☆-->(.*)<!--☆ここまで"
 
-    engtitle = soup.find('span', class_='text_small').text
-    engtitle = re.sub(pattern,'', engtitle)
+    engtitle = soup.find('span', class_='text_small').text.replace('\n','')
+    engtitle = re.sub(engpattern,'', engtitle)
 
     jptitle = re.findall(jppattern, str(soup))[0].replace('\u3000', ' ')
 

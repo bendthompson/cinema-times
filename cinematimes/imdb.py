@@ -9,6 +9,16 @@ def moviesearch(query):
     firstresult = response['results'][0]
     return firstresult
 
+def moviedetails(movieid):
+    '''
+    takes id, calls details api, returns a dict of many details
+    '''
+    url = 'https://imdb-api.com/en/API/Title/k_iw50ohm9/'
+    response = requests.get(url + movieid)
+    print(f"Response :{response.status_code}")
+    moviedetails = response.json()
+    return moviedetails
+
 def resizeimage(imagelink, size='384x528'):
     '''
     takes the image link which is sometimesbig and returns a ink to a resized version
