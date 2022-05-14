@@ -1,74 +1,19 @@
-# Data analysis
-- Document here the project: cinematimes
-- Description: Project Description
-- Data Source:
-- Type of analysis:
+# Cinema Times🍿
+Using web scraping and calling API's to source data for all my nearby cinemas and display it in one place.
 
-Please document the project the better you can.
+# Skills I used/learned
 
-# Startup the project
+🎞️ Called API's using the requests package, handling response errors and sending dynamic queries
 
-The initial setup.
+📽️ Streamlined code to minimize number of http requests and improve runtime
 
-Create virtualenv and install the project:
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
-    pip install pip -U; pip install -r requirements.txt
-```
+🎬 Scraped html code using the BeautifulSoup package. Had to use various BSoup methods to work around messily structured websites
 
-Unittest test:
-```bash
-make clean install test
-```
+📹 Gained valuable experience about the importance of data architecture and creating a data pipeline 
 
-Check for cinematimes in gitlab.com/{group}.
-If your project is not set please add it:
+🎦 Used a wide range of Streamlit features to create a clear and robust frontend
 
-- Create a new project on `gitlab.com/{group}/cinematimes`
-- Then populate it:
+🎥 Made a well structured repo with importable packages to keep main file tidy
 
-```bash
-##   e.g. if group is "{group}" and project_name is "cinematimes"
-git remote add origin git@github.com:{group}/cinematimes.git
-git push -u origin master
-git push -u origin --tags
-```
+📸
 
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-cinematimes-run
-```
-
-# Install
-
-Go to `https://github.com/{group}/cinematimes` to see the project, manage issues,
-setup you ssh public key, ...
-
-Create a python3 virtualenv and activate it:
-
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv -ppython3 ~/venv ; source ~/venv/bin/activate
-```
-
-Clone the project and install it:
-
-```bash
-git clone git@github.com:{group}/cinematimes.git
-cd cinematimes
-pip install -r requirements.txt
-make clean install test                # install and test
-```
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-cinematimes-run
-```
