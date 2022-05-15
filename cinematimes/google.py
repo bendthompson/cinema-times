@@ -1,4 +1,5 @@
 import requests
+import pandas as pd
 
 def search(query):
     '''
@@ -37,3 +38,38 @@ def movie_list(showtimes):
     '''
     movie_set = {movie['name'] for day in showtimes for movie in day['movies']}
     return list(movie_set)
+
+def eng_movie_list(showtimes):
+    '''
+    goes through showtimes and returns a list of each unique eng movie
+    '''
+    pattern = r'[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f]'
+    movie_set = {movie['name'] for day in showtimes for movie in day['movies'] if bool(re.search(pattern, movie['name'])) == False}
+    return list(movie_set)
+
+def eng_day_to_df(day):
+    pattern = r'[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f]'
+    daydict=[{'name':movie['name'],'times':movie['showing']} for movie in day['movies'] if bool(re.search(pattern, movie['name'])) == False]
+    for movie in daydict:
+        movie['Movie'] = movie.pop('name')
+        for typedict in movie['times']:
+            movie[typedict['type']] = typedict['time']
+        movie.pop('times')
+    daydf = pd.DataFrame(daydict).set_index('Movie').fillna('-')
+    return daydf
+
+def day_to_df(day):
+    daydict=[{'name':movie['name'],'times':movie['showing']} for movie in day['movies']]
+    for movie in daydict:
+        movie['Movie'] = movie.pop('name')
+        for typedict in movie['times']:
+            movie[typedict['type']] = typedict['time']
+        movie.pop('times')
+    daydf = pd.DataFrame(daydict).set_index('Movie').fillna('-')
+    return daydf
+
+def eng_daily_df_list(showtimes):
+    return [eng_day_to_df(day) for day in showtimes]
+
+def daily_df_list(showtimes):
+    return [day_to_df(day) for day in showtimes]
