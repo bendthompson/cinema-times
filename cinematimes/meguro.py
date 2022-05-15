@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import pandas as pd
-import imdb
+from cinematimes import imdb
 
 def get_soup():
     '''

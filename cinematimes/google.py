@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+import re
 
 def search(query):
     '''
@@ -55,7 +56,7 @@ def eng_day_to_df(day):
         for typedict in movie['times']:
             movie[typedict['type']] = typedict['time']
         movie.pop('times')
-    daydf = pd.DataFrame(daydict).set_index('Movie').fillna('-')
+    daydf = pd.DataFrame(daydict)
     return daydf
 
 def day_to_df(day):
@@ -63,9 +64,9 @@ def day_to_df(day):
     for movie in daydict:
         movie['Movie'] = movie.pop('name')
         for typedict in movie['times']:
-            movie[typedict['type']] = typedict['time']
+            movie[typedict['type']] = typedict['time'][0]
         movie.pop('times')
-    daydf = pd.DataFrame(daydict).set_index('Movie').fillna('-')
+    daydf = pd.DataFrame(daydict).fillna('-')
     return daydf
 
 def eng_daily_df_list(showtimes):
