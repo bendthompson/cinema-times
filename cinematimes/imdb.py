@@ -38,3 +38,20 @@ def poster(movieid):
     firstposter = response['posters'][0]
     link = firstposter['link']
     return link
+
+def search_list(titlelist):
+    '''
+    takes a list of titles, searches for them at the imdb api and returns responses
+    '''
+    resp = [moviesearch(title) for title in titlelist]
+    cleanresp = [movie for movie in resp if movie != 'none']
+    return cleanresp
+
+def info_list(imdb_search_list):
+    '''
+    takes a list of imdb ids and returns details about them from imdb api
+    '''
+    info = [moviedetails(movie['id']) for movie in imdb_search_list]
+    for movie in info:
+        movie['image']=movie['image'].replace('original', '384x528')
+    return info
