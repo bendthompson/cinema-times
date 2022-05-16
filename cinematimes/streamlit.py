@@ -2,8 +2,8 @@ import streamlit as st
 st.set_page_config(layout="wide")
 import numpy as np
 import pandas as pd
-import imdb
-import meguro
+from cinematimes import imdb
+from cinematimes import meguro
 from cinematimes import google
 
 
@@ -22,10 +22,19 @@ if 'urawa_info' not in st.session_state:
     showtimes = google.search('united cinemas urawa')
     urawa_dfs = google.eng_daily_df_list(showtimes)
     urawa_list = google.eng_movie_list(showtimes)
-    urawa_imdb_search = meguro.meguro_imdb_search(urawa_list)
-    urawa_imdb_info = meguro.meguro_imdb_info(urawa_imdb_search)
+    urawa_imdb_search = imdb.search_list(urawa_list)
+    urawa_imdb_info = imdb.info_list(urawa_imdb_search)
     st.session_state['urawa_info'] = urawa_imdb_info
     st.session_state['urawa_dfs'] = urawa_dfs
+
+if 'toho_info' not in st.session_state:
+    showtimes = google.search('toho cinema lalaport fujimi')
+    toho_dfs = google.eng_daily_df_list(showtimes)
+    toho_list = google.eng_movie_list(showtimes)
+    toho_imdb_search = imdb.search_list(toho_list)
+    toho_imdb_info = imdb.info_list(toho_imdb_search)
+    st.session_state['toho_info'] = toho_imdb_info
+    st.session_state['toho_dfs'] = toho_dfs
 
 
 meg_imdb_info = st.session_state['meguro_info']
@@ -33,6 +42,9 @@ meg_df = st.session_state['meguro_df']
 
 urawa_imdb_info = st.session_state['urawa_info']
 urawa_dfs = st.session_state['urawa_dfs']
+
+toho_imdb_info = st.session_state['toho_info']
+toho_dfs = st.session_state['toho_dfs']
 
 st.title("Some Cinema Times🎬")
 
