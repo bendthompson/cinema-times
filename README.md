@@ -1,6 +1,8 @@
 # Cinema Times🍿
 Using web scraping and calling API's to source data for all my nearby cinemas and display it in one place.
 
+[See the app here]()
+
 # Skills I used/learned
 
 🎞️ Called API's using the requests package, handling response errors and sending dynamic queries
@@ -11,9 +13,23 @@ Using web scraping and calling API's to source data for all my nearby cinemas an
 
 📹 Gained valuable experience about the importance of data architecture and creating a data pipeline 
 
-🎦 Used a wide range of Streamlit features to create a clear and robust frontend
+🎦 Used a wide range of Streamlit features to create a clear and robust frontend that was hosted on Heroku
 
 🎥 Made a well structured repo with importable packages to keep main file tidy
 
 📸 Used RegEx with English and Japanese text
 
+# Motivation
+
+I've been a keen cinema-goer for a long time, but since I came to Japan my options for foreign movies at the cinema have been more limited. But theres some non-blockbuster movies that make it through to Japan, either at mainstream cinemas or independent cinemas. 
+
+My previous tactic was going to the website of each nearby cinema I knew about and checking their showtimes, which took some time. So I decided a good way to practice my data sourcing skills would be to write code that would collect all this information in one place for me! 
+
+I implemented 3 cinemas into the app so far. Plus a feature where you can add your own cinema if Google can find showtimes for it. 
+
+# Screenshots
+
+
+![ss1](https://user-images.githubusercontent.com/97390056/168751961-e762f467-7946-4001-9e6d-02a2349224c9.PNG)
+![ss2](https://user-images.githubusercontent.com/97390056/168751956-ab1f3e70-ef99-4a7c-8b54-068385ec857d.PNG)
+![ss3](https://user-images.githubusercontent.com/97390056/168751954-b4607184-e053-46a5-8ce8-448f2daf2939.PNG)
