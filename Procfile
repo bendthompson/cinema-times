@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run cinematimes/app.py
+web: sh setup.sh && streamlit run cinematimes/CinemaTimes.py
