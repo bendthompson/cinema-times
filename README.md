@@ -21,7 +21,7 @@ Using web scraping and calling API's to source data for all my nearby cinemas an
 
 # Motivation
 
-I've been a keen cinema-goer for a long time, but since I came to Japan my options for foreign movies at the cinema have been more limited. But theres some non-blockbuster movies that make it through to Japan, either at mainstream cinemas or independent cinemas. 
+I've been a keen cinema-goer for a long time, but since I came to Japan my options for foreign movies at the cinema have been more limited. But sometimes there are some non-blockbuster movies that make it through to Japan, either at mainstream cinemas or independent cinemas. 
 
 My previous tactic was going to the website of each nearby cinema I knew about and checking their showtimes, which took some time. So I decided a good way to practice my data sourcing skills would be to write code that would collect all this information in one place for me! 
 
