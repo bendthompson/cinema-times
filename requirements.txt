@@ -9,6 +9,13 @@ numpy
 pandas
 scikit-learn
 
+#frontend
+streamlit
+
+#scraping
+requests
+re
+
 # tests/linter
 black
 coverage
