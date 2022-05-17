@@ -16,6 +16,27 @@ def search(query):
 
     return showtimes
 
+def extrasearch(query):
+    '''
+    takes extra query and returns googles showtimes if they exist
+    '''
+    url = 'https://serpapi.com/search.json'
+    params = {"q": query, "hl": "en","gl": "us",
+              "api_key": "795f9ca654b1031eb177ec72c1b14382c12a781a6db5e4a739c719fb308e47c8"}
+    response = requests.get(url, params=params)
+    print(response.status_code)
+
+    if response.status_code == 200:
+        checkst = response.json().get('showtimes')
+        if checkst:
+            showtimes = response.json()['showtimes']
+        else:
+            showtimes = 'No results'
+    else:
+        showtimes = 'No response'
+
+    return showtimes
+
 def start_end(showtimes):
     '''
     takes showtimes dictionary given by googlesearch and returns tuple of startday and endday
@@ -54,9 +75,10 @@ def eng_day_to_df(day):
     for movie in daydict:
         movie['Movie'] = movie.pop('name')
         for typedict in movie['times']:
-            movie[typedict['type']] = typedict['time']
+            movie[typedict['type']] = ' '.join(typedict['time'])
         movie.pop('times')
     daydf = pd.DataFrame(daydict)
+    daydf.fillna('-', inplace=True)
     return daydf
 
 def day_to_df(day):
@@ -64,9 +86,10 @@ def day_to_df(day):
     for movie in daydict:
         movie['Movie'] = movie.pop('name')
         for typedict in movie['times']:
-            movie[typedict['type']] = typedict['time'][0]
+            movie[typedict['type']] = ' '.join(typedict['time'][0])
         movie.pop('times')
-    daydf = pd.DataFrame(daydict).fillna('-')
+    daydf = pd.DataFrame(daydict)
+    daydf.fillna('-', inplace=True)
     return daydf
 
 def eng_daily_df_list(showtimes):
