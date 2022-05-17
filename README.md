@@ -27,6 +27,12 @@ My previous tactic was going to the website of each nearby cinema I knew about a
 
 I implemented 3 cinemas into the app so far. Plus a feature where you can add your own cinema if Google can find showtimes for it. 
 
+**Data Sources:**
+
+- Images and details are collected from [imdb-api](https://imdb-api.com/)
+- Google showtimes info is collected from [serp-api](https://serpapi.com/)
+- Meguro Cinema info is scraped from [okura-movie.co.jp](http://www.okura-movie.co.jp/meguro_cinema/now_showing.html)
+
 # Screenshots
 
 
