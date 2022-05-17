@@ -15,5 +15,5 @@ Using web scraping and calling API's to source data for all my nearby cinemas an
 
 🎥 Made a well structured repo with importable packages to keep main file tidy
 
-📸
+📸 Used RegEx with English and Japanese text
 
