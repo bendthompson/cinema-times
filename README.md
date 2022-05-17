@@ -7,17 +7,17 @@ Using web scraping and calling API's to source data for all my nearby cinemas an
 
 🎞️ Called API's using the requests package, handling response errors and sending dynamic queries
 
-📽️ Streamlined code to minimize number of http requests and improve runtime
+📽️ Scraped html code using the BeautifulSoup package. Had to use various BSoup methods to work around messily structured websites
 
-🎬 Scraped html code using the BeautifulSoup package. Had to use various BSoup methods to work around messily structured websites
+🎬 Used RegEx with English and Japanese text
 
 📹 Gained valuable experience about the importance of data architecture and creating a data pipeline 
 
 🎦 Used a wide range of Streamlit features to create a clear and robust frontend that was hosted on Heroku
 
-🎥 Made a well structured repo with importable packages to keep main file tidy
+🎥 Streamlined code to minimize number of http requests and improve runtime
 
-📸 Used RegEx with English and Japanese text
+📸 Maintained a structured repo, refactoring code into importable packages to keep app file tidy
 
 # Motivation
 
