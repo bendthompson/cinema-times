@@ -1,4 +1,4 @@
-# Cinema Times🍿
+# Cinema Times 🍿
 Using web scraping and calling API's to source data for all my nearby cinemas and display it in one place.
 
 [See the app here](https://cinema-times-scraper.herokuapp.com/)
