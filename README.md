@@ -1,5 +1,5 @@
 # Cinema Times 🍿
-Using web scraping and calling API's to source data for all my nearby cinemas and display it in one place.
+Using web scraping and calling API's to source data for all my nearby cinemas and display it in one place with Streamlit and Heroku.
 
 [See the app here](https://cinema-times-scraper.herokuapp.com/)
 
