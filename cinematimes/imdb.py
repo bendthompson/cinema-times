@@ -7,8 +7,12 @@ def moviesearch(query):
     url = 'https://imdb-api.com/en/API/SearchMovie/k_iw50ohm9/'
     response = requests.get(url+query)
     if response.status_code == 200:
-        firstresult = response.json()['results'][0]
-        return firstresult
+        resultlist = response.json()['results']
+        if len(resultlist) != 0:
+            firstresult = resultlist[0]
+            return firstresult
+        else:
+            return 'none'
     else:
         return 'none'
 
