@@ -85,7 +85,7 @@ def meguro_info_df(meguro_info):
             key=item[0]+' - '+item[1]
             infodict[key] = []
         if type(item) == dict:
-            value = item['engtitle']
+            value = item['engtitle'].lower().title()
             if value == '':
                 value = 'japanese movie'
                 infodict[key].insert(-1,value)
