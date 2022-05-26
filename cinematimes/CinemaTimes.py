@@ -42,7 +42,7 @@ subh.subheader("**Welcome!**")
 desc.markdown("##### This is a personal project where I used web scraping and API's to source movie showtimes and information for my favourite cinemas")
 
 col01.write('**Instructions**')
-col02.markdown("- You can select cinemas from the Cinema List to see what's now showing. \n - You can click the expanders below each movie to see details and a plot summary. \n - Below the movies you can click the expander to see the showtimes for each cinema. \n - If you'd like to add one more cinema to the list, you can search for it next to the list \n - *If there are a lot of movies it can take a while to collect all the information! Please be patient for a few seconds*☺️")
+col02.markdown("- You can select cinemas from the Cinema List to see what's now showing \n - You can click the expanders below each movie to see details and a plot summary \n - Below the movies you can click the expander to see the showtimes for each cinema \n - If you'd like to add one more cinema to the list, you can search for it next to the list \n - *If there are a lot of movies it can take a while to collect all the information! Please be patient for a few seconds*☺️")
 
 col11.write('**Sources**')
 col12.write("Images and details are collected from [imdb-api](https://imdb-api.com/)")
