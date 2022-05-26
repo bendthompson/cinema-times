@@ -224,7 +224,6 @@ if 'Urawa United Cinema' in cinemas:
                     st.write(f'[{details["plot"]}]')
 
     showtimes = urawa_sts
-    df = google.eng_day_to_df(showtimes[1])
     dfdict ={day['day'] +', '+ day['date']:df for day,df in zip(showtimes, urawa_dfs)}
 
     with st.expander("See times"):
@@ -339,7 +338,6 @@ if 'Toho Cinema Fujimi' in cinemas:
                     st.write(f'[{details["plot"]}]')
 
     showtimes = toho_sts
-    df = google.eng_day_to_df(showtimes[1])
     dfdict ={day['day'] +', '+ day['date']:df for day,df in zip(showtimes, toho_dfs)}
 
     with st.expander("See times"):
